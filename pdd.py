@@ -46,73 +46,17 @@ orange_area= float(len(pixelpoints_orange))*100/float(image_area)
 print "orange area=", orange_area, "%"
 print "image area", image_area
 
-qr = pyqrcode.create('Name: PDD \n Passport number: \n Weight: 100kg \n From: TRY Destination: MAS \n Content composition: \n organic % =' + str(orange_area) + '\n metal % =' +str(blue_area))
+#qr = pyqrcode.create('Name: PDD \n Passport number: \n Weight: 100kg \n From: TRY Destination: MAS \n Content composition: \n organic % =' + str(orange_area) + '\n metal % =' +str(blue_area))
 #qr = pyqrcode.create('HI'+ str(orange_area))
 
-qr.png('QR_tag.png', scale=5)
+#qr.png('QR_tag.png', scale=5)
 
-#calculation of blue
-"""
-for i in range(len(blue_contours)):
-	c=blue_contours[i]
-	if(flag==False):
-		if (b_parent_var == blue_hierarchy[0,i,3]):
-			blue_area-=cv2.contourArea(c)
-		else:
-			blue_area+=cv2.contourArea(c)
-
-	else:
-		if (b_parent_var == blue_hierarchy[0,i,3]):
-			blue_area+=cv2.contourArea(c)
-		else:
-			blue_area-=cv2.contourArea(c)
-
-	if(i<(len(blue_contours)-1) and i==blue_hierarchy[0,i+1,3]):
-		b_parent_var= i
-		if(i>0):
-			flag=~flag
-	print blue_area
-
-flag = False
-o_parent_var=-2
-#calculation of orange
-for i in range(len(orange_contours)):
-	c=orange_contours[i]
-	if(flag==False):
-		if (o_parent_var == orange_hierarchy[0,i,3]):
-			orange_area-=cv2.contourArea(c)
-		else:
-			orange_area+=cv2.contourArea(c)
-
-	else:
-		if (o_parent_var == orange_hierarchy[0,i,3]):
-			orange_area+=cv2.contourArea(c)
-		else:
-			orange_area-=cv2.contourArea(c)
-
-	if(i<(len(orange_contours)-1) and i==orange_hierarchy[0,i+1,3]):
-		o_parent_var= i
-		if(i>0):
-			flag=~flag
-	print "orange =", orange_area
-
-
-blue_composition=(blue_area*100)/image_area
-orange_composition=(orange_area*100)/image_area
-
-print blue_area
-print orange_area
-
-print image_area
-print "blue composition =", blue_composition, "%"
-print "orange composition =", orange_composition, "%"
-"""
-cv2.imshow('image',img)
+"""cv2.imshow('image',img)
 cv2.imshow('mask_blue',mask_blue)
 cv2.imshow('result', result_blue)
 cv2.imshow('orange_mask', mask_orange)
-cv2.imshow('result_orange',result_orange)
+cv2.imshow('result_orange',result_orange)"""
 
-k=cv2.waitKey(0) & 0xFF
+"""k=cv2.waitKey(0) & 0xFF
 if k==27:
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()"""
